@@ -21,7 +21,7 @@ public class YoilTeller {
         String month = request.getParameter("month");
         String day = request.getParameter("day");
         
-        // 2. 작업
+        // 2. 작업 (요일 계산)
         int yyyy = Integer.parseInt(year);
         int mm = Integer.parseInt(month);
         int dd = Integer.parseInt(day);
