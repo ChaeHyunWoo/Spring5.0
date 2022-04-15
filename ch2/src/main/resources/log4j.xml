@@ -29,7 +29,7 @@
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="info" />
+		<level value="trace" /> <!-- 디버그에서 trace가 에러를 가장 자세히 보여주는 Level이다. --> <!-- info에서 trace로 변경함 -->
 	</logger>
 
 	<!-- Root Logger -->

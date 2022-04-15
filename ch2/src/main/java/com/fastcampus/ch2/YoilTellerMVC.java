@@ -3,6 +3,7 @@ package com.fastcampus.ch2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
@@ -12,10 +13,11 @@ import java.util.Calendar;
 // - YoilTeller.java를 스프링 패턴을 이용해서 관심사를 분리할 것이다.
 @Controller
 public class YoilTellerMVC {
-	
-	/*
+			
     @RequestMapping("/getYoilMVC") // http://localhost:8080/ch2/getYoil?year=2021&month=10&day=1
-    public String main(int year, int month, int day, Model model) throws IOException {
+    public String main(@RequestParam(required = true) int year, 
+    		@RequestParam(required = true) int month, 
+    		@RequestParam(required = true) int day, Model model) {
         
     	//1. 유효성 검사
     	if(!isValid(year,month,day))
@@ -33,8 +35,8 @@ public class YoilTellerMVC {
         // - model에 저장한 데이터를 뷰(View)로 보낸다. View : yoil.jsp
         return "yoil";// WEB-INF/views/yoil.jsp를 반환한다.
 
-    } */
-	
+    } 
+	/*
 	//위의 방법을 ModelAndView 방식으로 변경
 	@RequestMapping("/getYoilMVC") // http://localhost:8080/ch2/getYoil?year=2021&month=10&day=1
 	public ModelAndView main(int year, int month, int day) throws IOException {
@@ -61,7 +63,7 @@ public class YoilTellerMVC {
 	    
 	    //6. ModelAndView를 반환
 	    return mv; // mv를 반환한다.
-	}
+	} */
     
 	private boolean isValid(int year, int month, int day) {
 		// TODO Auto-generated method stub
