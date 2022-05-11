@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car" class="com.fastcampus.ch3.Car">
+        <constructor-arg name="color" value="red"/> <!--기본형이나 string일때는 value로 작성-->
+        <constructor-arg name="oil" value="100"/>
+        <constructor-arg name="engine" ref="engine"/> <!--engine의 type이 참조형이라 ref 씀-->
+        <constructor-arg name="doors">
+            <array value-type="com.fastcampus.ch3.Door">
+                <ref bean="door"/>
+                <ref bean="door"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="engine" class="com.fastcampus.ch3.Engine" scope="singleton"/><!--singleton 생략가능/기본값이 singleton-->
+    <!--싱글톤 패턴 : 클래스의 객체는 1개만 생성-->
+    <bean id="door" class="com.fastcampus.ch3.Door" scope="prototype"/>
+    <!--getBean할때마다 새로운 객체를 만들려면 scope 값을 protoType으로-->
+
+</beans>
